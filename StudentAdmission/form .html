@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body style="font-family: 'Roboto', sans-serif"> 
+
+    <div class="bubble" style="width: 200px; height: 200px; top: 20%; left: 10%;"></div>
+    <div class="bubble" style="width: 150px; height: 150px; top: 70%; left: 25%;"></div>
+    <div class="bubble" style="width: 250px; height: 250px; top: 60%; right: 10%;"></div>
+    <div class="bubble" style="width: 100px; height: 100px; top: 20%; right: 20%;"></div>
+    
+    <div class="glass-card">
+        <h1>Student Admission Form</h1>
+        <form action="insert.php" method="POST" enctype="multipart/form-data" onsubmit="return confirm('Are you sure you want to submit this form?');">
+            <label for="full_name">Full Name:</label>
+            <input type="text" name="full_name" id="full_name" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" name="dob" id="dob" required>
+
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender" required>
+                <option value="">Choose</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="course">Course or Program:</label>
+            <input type="text" name="course" id="course" required>
+
+            <label for="year_level">Year Level:</label>
+            <input type="number" name="year_level" id="year_level" min="1" max="4" required>
+
+            <label for="contact_number">Contact Number:</label>
+            <input type="text" name="contact_number" id="contact_number" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" name="email" id="email" required>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+</body>
+</html>

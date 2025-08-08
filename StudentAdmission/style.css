@@ -1,0 +1,153 @@
+:root {
+    --pink: #cb80aa;
+    --violet: #8278b2;
+    --cream: #f9f3e9;
+    --blue: #a3c1e0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--pink), var(--violet), var(--blue));
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: var(--cream);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.glass-card {
+    background: rgba(255, 219, 254, 0.159);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    box-shadow: 0 4px 30px rgba(76, 11, 106, 0.1);
+    padding: 2rem;
+    width: 80%;
+    max-width: 500px;
+    color: var(--cream);
+    transition: all 0.3s ease;
+    perspective: 1000px;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px) rotateY(5deg);
+    box-shadow: 0 15px 45px rgba(31, 38, 135, 0.5);
+}
+
+.glass-button {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--cream);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateZ(10px);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid var(--cream); 
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+input[type="text"]:hover,
+input[type="date"]:hover,
+input[type="number"]:hover,
+input[type="email"]:hover,
+select:hover {
+    transform: translateZ(5px);
+}
+
+button[type="submit"] {
+    margin-top: 20px;
+    width: relative;
+    background: linear-gradient(135deg, var(--violet), var(--blue));
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+button[type="reset"] {
+    margin-top: 20px;
+    width: relative;
+    background: linear-gradient(135deg, var(--violet), var(--blue));
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, var(--blue), var(--pink));
+    transform: translateZ(5px);
+}
+
+button[type="reset"]:hover {
+    background: linear-gradient(135deg, var(--blue), var(--pink));
+    transform: translateZ(5px);
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    z-index: -1;
+    animation: float 15s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(0px) translateX(20px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(20px) translateX(10px) rotate(-5deg);
+    }
+}
