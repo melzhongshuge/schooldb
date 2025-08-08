@@ -66,6 +66,14 @@
                 alert("Date of Birth is required.");
                 return false;
             }
+                var dobDate = new Date(dob);
+                var today = new Date();
+                today.setHours(0, 0, 0, 0);
+                
+                if (dobDate > today) {
+                alert("Date of Birth cannot be in the future.");
+                return false;
+                }
 
             if (yearLevel < 1 || yearLevel > 4) {
                 alert("Year Level must be between 1 and 4.");
