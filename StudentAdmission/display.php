@@ -22,15 +22,19 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Admissions Records</h2>
+    <div class="container">
+    <div class="search-record">
+    <h2>&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;Admissions Records</h2>
 
     <form method="get">
-        <input type="text" name="course" placeholder="Filter by course" value="<?php echo $courseFilter; ?>">
-        <input type="number" name="year_level" placeholder="Filter by year_level" value="<?php echo $yearFilter; ?>">
+        <input type="text" id="course_search" name="course" placeholder="Filter by course" value="<?php echo $courseFilter; ?>">
+        <input type="number" id="year_search" name="year_level"  placeholder="Filter by year_level" value="<?php echo $yearFilter; ?>">
         <button type="submit">Filter</button>
-        <a href="display.php">Reset</a>
+        <a href="display.php" class="reset">Reset</a>
     </form>
+    </div>
 
+    <div class="glass-card-display">
     <table>
         <tr>
             <th>ID</th><th>Name</th><th>DOB</th><th>Gender</th>
@@ -47,14 +51,17 @@ $result = $conn->query($sql);
             <td><?php echo htmlspecialchars($row['contact_number']); ?></td>
             <td><?php echo htmlspecialchars($row['email']); ?></td>
             <td>
+                 <!--UPDATE FUNCTIONS-->
                 <a href="update.php?id=<?php echo $row['id']; ?>">Edit</a> |
+                 <!--DELETE FUNCTIONS-->
                 <a href="delete.php?id=<?php echo $row['id']; ?>"
                    onclick="return confirm('Delete this record?');">Delete</a>
             </td>
         </tr>
         <?php endwhile; ?>
     </table>
-
+    
+ <!--SEARCH/FILTER-->
     <?php
     $agg = $conn->query("
         SELECT course, COUNT(*) AS total
@@ -74,7 +81,9 @@ $result = $conn->query($sql);
         <?php endwhile; ?>
     </table>
     <?php endif; ?>
-
     <p><a href="form.html">Add New Student</a></p>
+        </div>
+    </div>
+    
 </body>
 </html>

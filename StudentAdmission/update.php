@@ -39,7 +39,7 @@ $student = $result->fetch_assoc();
     
     <h2>Update Student Record</h2>
 
-<form action="update.php" method="POST" onsubmit="return confirm('Are you sure you want to update this record?');">
+<form action="update.php" method="POST" onsubmit="return validateUpdateForm()">
     <input type="hidden" name="id" value="<?php echo $student['id']; ?>">
     <label for="full_name">Full Name:</label>
     <input type="text" name="full_name" id="full_name" value="<?php echo htmlspecialchars($student['full_name']); ?>" required>
@@ -69,6 +69,12 @@ $student = $result->fetch_assoc();
     <button type="submit">Update</button>
     <button type="reset">Reset</button>
 </form>
+
+<script>
+    function validateUpdateForm() {
+        return validateForm(); // Calls the same validation function form.html lol
+    }
+</script>
 
 </body>
 </html>

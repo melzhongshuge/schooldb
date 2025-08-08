@@ -1,8 +1,11 @@
+/*GENERAL*/
 :root {
     --pink: #cb80aa;
-    --violet: #8278b2;
+    --violet: #6d6691;
     --cream: #f9f3e9;
     --blue: #a3c1e0;
+    --green: #57947c;
+    --red: #d06c6c;
 }
 
 body {
@@ -24,7 +27,47 @@ h1 {
     text-align: center;
     color: var(--cream);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
 }
+
+h2 {
+    align-items: center;
+    color: var(--cream);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+
+.search-record {
+    position: relative;
+    margin-left: 15%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+}    
+
+.glass-card-display {
+    z-index: 1;
+    background: rgba(255, 219, 254, 0.159);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    box-shadow: 0 4px 30px rgba(76, 11, 106, 0.1);
+    padding: 2rem;
+    width: relative;
+    color: var(--cream);
+    transition: all 0.3s ease;
+    perspective: 1000px;
+    }
+
+
+
+
+
+/*Glassmorphism*/
 
 .glass-card {
     background: rgba(255, 219, 254, 0.159);
@@ -41,6 +84,7 @@ h1 {
     transition: all 0.3s ease;
     perspective: 1000px;
 }
+
 
 .glass-card:hover {
     transform: translateY(-5px) rotateY(5deg);
@@ -67,6 +111,17 @@ h1 {
     transform: translateZ(10px);
 }
 
+#course_search, #year_search{
+    width: relative;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
 input[type="text"],
 input[type="date"],
 input[type="number"],
@@ -76,7 +131,7 @@ select {
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
-    border: 1px solid var(--cream); 
+    border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     transition: transform 0.3s ease;
@@ -90,10 +145,10 @@ select:hover {
     transform: translateZ(5px);
 }
 
-button[type="submit"] {
+button[type="submit"]{
     margin-top: 20px;
-    width: relative;
-    background: linear-gradient(135deg, var(--violet), var(--blue));
+    width: 248px;
+    background: linear-gradient(132deg, var(--violet), var(--blue));
     color: white;
     padding: 12px;
     border: none;
@@ -101,28 +156,38 @@ button[type="submit"] {
     cursor: pointer;
     font-size: 16px;
     transition: transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    flex-flow:column;
 }
 
-button[type="reset"] {
-    margin-top: 20px;
-    width: relative;
-    background: linear-gradient(135deg, var(--violet), var(--blue));
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: transform 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background: linear-gradient(135deg, var(--blue), var(--pink));
+button[type="submit"]:hover{
+    background: var(--green);
     transform: translateZ(5px);
 }
 
-button[type="reset"]:hover {
-    background: linear-gradient(135deg, var(--blue), var(--pink));
+
+button[type="reset"],
+.reset{
+    margin-top: 20px;
+    width: 248px;
+    background: linear-gradient(132deg, var(--violet), var(--blue));
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    flex-flow:column;
+}
+
+button[type="reset"]:hover,
+.reset:hover
+{
+    background: var(--red);
     transform: translateZ(5px);
 }
 
@@ -151,3 +216,10 @@ button[type="reset"]:hover {
         transform: translateY(20px) translateX(10px) rotate(-5deg);
     }
 }
+
+ /* Responsive: optional */
+        @media (max-width: 600px) {
+            form {
+                padding: 20px;
+            }
+        }
